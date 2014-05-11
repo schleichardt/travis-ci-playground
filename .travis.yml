@@ -2,15 +2,16 @@ language: scala
 scala:
 - 2.10.4
 script:
+- du -sh ~/.ivy2
+- du -s ~/.ivy2
+- ls ~/.ivy2/cache
 - ./sbt compile
 jdk:
-- oraclejdk8
+- oraclejdk7
 env:
   matrix:
   - SBT_OPTS="-XX:PermSize=512M -XX:MaxPermSize=1024M"
-  global:
-    secure: gSJRjCBI/UYA+KUnY9Pnu8WgxXZPTQ9kVVu2a1HLPkVA3gHOSatwI0ZqAawbBvEanEhEoeSrUN4+kfkGIiPVnCByUitj6My+wB9IKluvmUNN/xL+TcWWvcre+3q9uaMU7IVqfPhkdW/eGUtUT3jq4hP4OK4V6Q2h22jwBl9UzWY=
 notifications:
   email:
     on_success: never
-    on_failure: change 
+    on_failure: never
