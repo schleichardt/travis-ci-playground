@@ -2,6 +2,7 @@
 *.log
 .*
 !/.gitignore
+!.travis.yml
 
 # sbt specific
 .cache/
