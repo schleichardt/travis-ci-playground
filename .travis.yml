@@ -1,14 +1,7 @@
-language: scala
-scala:
-- 2.10.4
-cache:
-  directories:
-  - ~/.ivy2
+language: java
 script:
-- du -sh ~/.ivy2
-- du -s ~/.ivy2
-- ls ~/.ivy2/cache
-- ./sbt compile
+- expected_product_count=5
+- echo 'Number of products 5' | grep "Number of products 5 $expected_product_count"
 jdk:
 - oraclejdk7
 notifications:
