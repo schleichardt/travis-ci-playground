@@ -1,6 +1,6 @@
 language: java
 script:
-- expected_product_count=5
+- expected_product_count="5"
 - echo 'Number of products 5' | grep "Number of products 5 $expected_product_count"
 jdk:
 - oraclejdk7
