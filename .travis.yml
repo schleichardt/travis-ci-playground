@@ -1,8 +1,7 @@
 language: java
 script:
-- expected_product_count=5
-- expected_scala_output="Number of products 5 $expected_product_count"
-- echo 'Number of products 5' | grep $expected_scala_output
+- export expected_product_count=5
+- echo 'Number of products 5' | grep "Number of products $expected_product_count"
 jdk:
 - oraclejdk7
 notifications:
