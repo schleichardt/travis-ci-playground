@@ -1,9 +1,8 @@
 language: java
 script:
-- export expected_product_count=5
-- echo 'Number of products 5' | grep "Number of products $expected_product_count"
+- javac -version
 jdk:
-- oraclejdk7
+- oraclejdk8
 notifications:
   email:
     on_success: never
