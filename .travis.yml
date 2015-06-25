@@ -5,6 +5,7 @@ before_install:
 - sudo apt-get install -y oracle-java8-installer oracle-java8-set-default
 
 script:
+- export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 - echo $JAVA_HOME
 - javac -version
 
