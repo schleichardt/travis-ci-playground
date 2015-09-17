@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         System.err.println("hallo");
-        System.err.println(System.getenv("SOMEVAR"));
+        System.err.println(System.getenv());
     }
 }
