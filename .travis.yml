@@ -10,6 +10,7 @@ before_install:
   - docker run sphereio/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
   - docker run sphereio/jvmsdk /bin/sh -c "touch /tmp/file.ext"
   - docker run sphereio/jvmsdk /bin/sh -c "ls /tmp"
+  - docker run sphereio/jvmsdk /bin/sh -c "pwd"
 
 script:
   - echo $JAVA_HOME
