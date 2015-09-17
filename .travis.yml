@@ -1,7 +1,7 @@
 sudo: required
 services:
 - docker
-before_install:
+script:
 - docker run msct/jvmsdk /bin/sh -c "echo $JAVA_HOME"
 - docker run msct/jvmsdk /bin/sh -c "java -version"
 - docker run msct/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
@@ -19,9 +19,7 @@ before_install:
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env VAR1="blahblah" ./sbt \"runMain Main\""
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env SOMEVAR=$SOMEVAR ./sbt \"runMain Main\""
 - ls
-script:
-- echo $JAVA_HOME
-- ls /usr/lib/jvm/java-8-oracle
+- pwd
 env:
   global:
     secure: ivB96OeuEzI/SFjPRoBCbuLaLqovXHCehE3h4+RujkDJUt+iVJQC+Fj2M9OYFuFcfzHv0uHBNYNLhfZbIbMQ2eEwP7Ts5/ozzVOy2XrlK2IjlgDH3TUrKqmfURiK+o0OBjHJcbuhdklnEhrDHyl7mdgV8VONO1W8kfZsCgiKr9Y=
