@@ -4,14 +4,13 @@ services:
   - docker
 
 before_install:
-  - docker build -t sphereio/jvmsdk .
-  - docker run sphereio/jvmsdk /bin/sh -c "echo $JAVA_HOME"
-  - docker run sphereio/jvmsdk /bin/sh -c "java -version"
-  - docker run sphereio/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
-  - docker run sphereio/jvmsdk /bin/sh -c "touch /tmp/file.ext"
-  - docker run sphereio/jvmsdk /bin/sh -c "ls /tmp"
-  - docker run sphereio/jvmsdk /bin/sh -c "pwd"
-  - docker run sphereio/jvmsdk v $PWD:/wd /bin/sh -c "sbt doc"
+  - docker run msct/jvmsdk /bin/sh -c "echo $JAVA_HOME"
+  - docker run msct/jvmsdk /bin/sh -c "java -version"
+  - docker run msct/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
+  - docker run msct/jvmsdk /bin/sh -c "touch /tmp/file.ext"
+  - docker run msct/jvmsdk /bin/sh -c "ls /tmp"
+  - docker run msct/jvmsdk /bin/sh -c "pwd"
+  - docker run msct/jvmsdk v $PWD:/wd /bin/sh -c "sbt doc"
 script:
   - echo $JAVA_HOME
   - ls /usr/lib/jvm/java-8-oracle
