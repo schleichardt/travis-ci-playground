@@ -6,6 +6,7 @@ services:
 before_install:
   - docker build -t sphereio/jvmsdk .
   - docker run sphereio/jvmsdk /bin/sh -c "echo $JAVA_HOME"
+  - docker run sphereio/jvmsdk /bin/sh -c "java -version"
   - docker run sphereio/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
 
 script:
