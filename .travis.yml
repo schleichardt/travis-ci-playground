@@ -9,7 +9,7 @@ before_install:
 - docker run msct/jvmsdk /bin/sh -c "ls /tmp"
 - docker run msct/jvmsdk /bin/sh -c "pwd"
 - ls
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ./sbt \"runMain Main\""
+- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && export SOMEVAR && ./sbt \"runMain Main\""
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ls"
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $SOMEVAR"
 - ls
