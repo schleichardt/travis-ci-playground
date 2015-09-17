@@ -12,6 +12,7 @@ before_install:
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && export SOMEVAR && ./sbt \"runMain Main\""
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ls"
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $SOMEVAR"
+- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $USER"
 - ls
 script:
 - echo $JAVA_HOME
