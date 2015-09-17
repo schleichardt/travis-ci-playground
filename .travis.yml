@@ -16,6 +16,8 @@ before_install:
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $HOME"
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo \"echo $SOMEVAR\" > script.sh && bash script.sh"
 - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && export SOMEVAR=$SOMEVAR && ./sbt \"runMain Main\""
+- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env VAR1="blahblah" ./sbt \"runMain Main\""
+- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env SOMEVAR=$SOMEVAR ./sbt \"runMain Main\""
 - ls
 script:
 - echo $JAVA_HOME
