@@ -1,25 +1,20 @@
 sudo: required
+
 services:
-- docker
+  - docker
+
 script:
-- docker run msct/jvmsdk /bin/sh -c "echo $JAVA_HOME"
-- docker run msct/jvmsdk /bin/sh -c "java -version"
-- docker run msct/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
-- docker run msct/jvmsdk /bin/sh -c "touch /tmp/file.ext"
-- docker run msct/jvmsdk /bin/sh -c "ls /tmp"
-- docker run msct/jvmsdk /bin/sh -c "pwd"
-- ls
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && export SOMEVAR && ./sbt \"runMain Main\""
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ls"
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $SOMEVAR"
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $USER"
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo $HOME"
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "echo \"echo $SOMEVAR\" > script.sh && bash script.sh"
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && export SOMEVAR=$SOMEVAR && ./sbt \"runMain Main\""
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env VAR1="blahblah" ./sbt \"runMain Main\""
-- docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && env SOMEVAR=$SOMEVAR ./sbt \"runMain Main\""
-- ls
-- pwd
-env:
-  global:
-    secure: ivB96OeuEzI/SFjPRoBCbuLaLqovXHCehE3h4+RujkDJUt+iVJQC+Fj2M9OYFuFcfzHv0uHBNYNLhfZbIbMQ2eEwP7Ts5/ozzVOy2XrlK2IjlgDH3TUrKqmfURiK+o0OBjHJcbuhdklnEhrDHyl7mdgV8VONO1W8kfZsCgiKr9Y=
+  - docker run msct/jvmsdk /bin/sh -c "echo $JAVA_HOME"
+  - docker run msct/jvmsdk /bin/sh -c "java -version"
+  - docker run msct/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
+  - docker run msct/jvmsdk /bin/sh -c "touch /tmp/file.ext"
+  - docker run msct/jvmsdk /bin/sh -c "ls /tmp"
+  - docker run msct/jvmsdk /bin/sh -c "pwd"
+  - ls
+  - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ./sbt doc"
+  - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ls"
+  - ls
+  - export ADDITIONAL_TASKS=""
+  - if [ "${TRAVIS_BRANCH}" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+      echo "da"
+    fi
