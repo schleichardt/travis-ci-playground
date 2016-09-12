@@ -4,17 +4,5 @@ services:
   - docker
 
 script:
-  - docker run msct/jvmsdk /bin/sh -c "echo $JAVA_HOME"
-  - docker run msct/jvmsdk /bin/sh -c "java -version"
-  - docker run msct/jvmsdk /bin/sh -c "/usr/lib/jvm/java-8-oracle/bin/java -version"
-  - docker run msct/jvmsdk /bin/sh -c "touch /tmp/file.ext"
-  - docker run msct/jvmsdk /bin/sh -c "ls /tmp"
-  - docker run msct/jvmsdk /bin/sh -c "pwd"
-  - ls
-  - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ./sbt doc"
-  - docker run -v $PWD:/wd msct/jvmsdk /bin/sh -c "cd /wd && ls"
-  - ls
-  - export ADDITIONAL_TASKS=""
   - if [ "${TRAVIS_BRANCH}" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
-      echo "da"
-    fi
+      echo "da"; fi
